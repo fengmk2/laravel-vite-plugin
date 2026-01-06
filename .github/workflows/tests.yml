@@ -6,11 +6,12 @@ on:
       - main
       - '*.x'
   pull_request:
-  schedule:
-    - cron: '0 0 * * *'
+  # schedule:
+  #   - cron: '0 0 * * *'
 
 env:
   LARAVEL_BYPASS_ENV_CHECK: 1
+  VP_TOKEN: ${{ secrets.VP_TOKEN }}
 
 jobs:
   tests:
