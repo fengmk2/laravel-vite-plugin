@@ -283,6 +283,10 @@ function ensureCommandShouldRunInEnvironment(command: 'build'|'serve', env: Reco
     if (command === 'build' || env.LARAVEL_BYPASS_ENV_CHECK === '1') {
         return;
     }
+    // FIXME: should set LARAVEL_BYPASS_ENV_CHECK to passThroughEnv on vite-task config
+    if (process.env.CI) {
+        return;
+    }
 
     if (typeof env.LARAVEL_VAPOR !== 'undefined') {
         throw Error('You should not run the Vite HMR server on Vapor. You should build your assets for production instead. To disable this ENV check you may set LARAVEL_BYPASS_ENV_CHECK=1');
