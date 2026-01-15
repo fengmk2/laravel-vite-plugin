@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, describe, expect, it, vi } from '@voidzero-dev/vite-plus/test'
 import fs from 'fs'
 import laravel from '../src'
 import { resolvePageComponent } from '../src/inertia-helpers';
